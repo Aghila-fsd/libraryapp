@@ -1,5 +1,5 @@
 const express=require ('express');
-const port = process.env.PORT || 2021;
+const port = process.env.PORT||2000
 const app= new express();
 const nav=[
 
@@ -64,8 +64,8 @@ const booksRouter=require('./src/routes/bookRoutes') (nav1,nav3);
 const authorsRouter=require('./src/routes/authorRoutes')(nav1,nav3);
 const loginRouter=require('./src/routes/loginRoutes')(nav1,nav2);
 const signupRouter=require('./src/routes/signupRoutes')(nav1,nav2);
-const addbookRouter=require('./src/routes/addbookRoutes')(nav1,nav3);
-const addauthorRouter=require('./src/routes/addauthorRoutes')(nav1,nav3);
+const addbookRouter=require('./src/routes/addBookRoutes')(nav1,nav3);
+const addauthorRouter=require('./src/routes/addAuthorRoutes')(nav1,nav3);
 const userbookRouter=require('./src/routes/userbookRoutes')(nav4,nav3);
 const userauthorRouter=require('./src/routes/userauthorRoutes')(nav4,nav3);
 
@@ -102,5 +102,5 @@ app.get('/',function(req,res){
 });
 
 app.listen(port, () => {
-    console.log("Server ready at" + port)
+    console.log("Server ready at:" + port)
 });

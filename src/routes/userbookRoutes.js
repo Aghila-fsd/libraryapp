@@ -3,13 +3,13 @@ const express=require("express")
 
 const userbookRouter=express.Router();
 
-const Userdata=require('../model/Userdata');
+const Bookdata=require('../model/Bookdata');
 
 
 function router(nav4,nav3){
 
     userbookRouter.get('/',function(req,res){
-        Userdata.find()
+        Bookdata.find()
         .then(function(userbooks){
            res.render("userbooks",{
                nav4,nav3,
@@ -23,7 +23,7 @@ function router(nav4,nav3){
     
    userbookRouter.get('/:id',function(req,res){
     const id=req.params.id;
-    Userdata.findOne({_id:id})
+    Bookdata.findOne({_id:id})
     .then(function(userbook){
         res.render('userbook',{
             nav4,
